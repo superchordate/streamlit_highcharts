@@ -2,9 +2,8 @@ function sendValue(value) {
   Streamlit.setComponentValue(value)
 }
 
-
 function onRender(event) {
-  if (true) {
+  if (!window.rendered) {
     const {options,height} = event.detail.args
     Streamlit.setFrameHeight(height+20)
     document.getElementById("container").style.height=height+"px"
